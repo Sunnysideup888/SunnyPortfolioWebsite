@@ -1,6 +1,9 @@
 <script>
 	import '../app.css';
+    import Navigation from "$lib/components/Navigation.svelte";
 	let { children } = $props();
 </script>
-
-{@render children()}
+<div>
+    <Navigation />
+    {@render children()}
+</div>
