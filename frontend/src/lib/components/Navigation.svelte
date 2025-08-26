@@ -1,10 +1,10 @@
 <script>
 	let navItems = [
-		{ path: '/', label: 'Home' },
-		{ path: '/portfolio', label: 'Portfolio' },
-		{ path: '/gallery', label: 'Gallery' },
-		{ path: '/contact', label: 'Contact' },
-		{ path: '/about', label: 'About' }
+		{ id: 1, path: '/', label: 'Home' },
+		{ id: 2, path: '/portfolio', label: 'Portfolio' },
+		{ id: 3, path: '/gallery', label: 'Gallery' },
+		{ id: 4, path: '/contact', label: 'Contact' },
+		{ id: 5, path: '/about', label: 'About' }
 	];
 </script>
 

@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @GetMapping("/api/test")
     public String test() {
-        return "Backend works just fine and this is awesome";
+        return "Backend works just fine and this is awesome and so cool help me";
     }
 }
