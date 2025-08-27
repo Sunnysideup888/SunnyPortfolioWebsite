@@ -16,7 +16,7 @@
 	};
 </script>
 
-<h1>Welcome to your library project</h1>
+<h1>This is my portfolio website</h1>
 
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
