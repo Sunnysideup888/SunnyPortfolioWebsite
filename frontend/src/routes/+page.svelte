@@ -15,7 +15,7 @@
 	};
 </script>
 
-<h1>This is my portfolio website</h1>
+<h1>This is my portfolio website and testing if CI/CD works</h1>
 
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
