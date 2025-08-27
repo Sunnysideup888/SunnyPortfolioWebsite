@@ -1,18 +1,17 @@
 <script>
-	import axios from "axios";
+	import axios from 'axios';
 
 	let message = '';
 
 	const handleClick = async () => {
-		console.log("CLICKED")
+		console.log('CLICKED');
 		try {
 			const response = await axios.get('http://localhost:8080/api/test');
 			message = response.data;
-			console.log(message)
+			console.log(message);
 		} catch (err) {
-			console.log("Error ", err)
+			console.log('Error ', err);
 		}
-
 	};
 </script>
 
