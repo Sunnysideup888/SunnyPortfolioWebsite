@@ -1,5 +1,6 @@
 <script>
 	import axios from 'axios';
+	import apiClient from "$lib/api.js";
 
 	// For the response message
 	let message = $state('');
@@ -7,7 +8,7 @@
 	const handleClick = async () => {
 		console.log('CLICKED');
 		try {
-			const response = await axios.get('http://localhost:8080/api/test');
+			const response = await apiClient.get(`/api/test`);
 			message = response.data;
 			console.log(message);
 		} catch (err) {
@@ -30,7 +31,7 @@
 		};
 
 		try {
-			const res = await axios.post('http://localhost:8080/api/users', newUser);
+			const res = await apiClient.post(`/api/users`, newUser)
 
 			statusMessage = `Added user ${res.data.id}`;
 
@@ -48,7 +49,7 @@
 	let deleteId = $state('');
 	const handleDeleteUser = async () => {
 		try {
-			await axios.delete(`http://localhost:8080/api/users/${deleteId}`);
+			await apiClient.delete(`/api/users/${deleteId}`)
 
 			statusMessage = `Deleted user ${deleteId}`;
 			deleteId = '';
@@ -67,7 +68,7 @@
 	let userList = $state([]);
 	const handleListUsers = async () => {
 		try {
-			const res = await axios.get('http://localhost:8080/api/users');
+			const res = await apiClient.get(`/api/users`)
 			userList = res.data;
 			statusMessage = `Fetched ${userList.length} users.`;
 
@@ -79,7 +80,7 @@
 	};
 </script>
 
-<h1>This is my portfolio website this is an example</h1>
+<h1>This is my portfolio website this is an example testing with frontend .env variable</h1>
 
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
