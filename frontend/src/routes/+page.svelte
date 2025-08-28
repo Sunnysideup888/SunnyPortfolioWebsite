@@ -80,7 +80,7 @@
 	};
 </script>
 
-<h1>This is my portfolio website this is an example testing backend update permissions</h1>
+<h1>This is my portfolio website this is an example testing backend update permissions more permissions</h1>
 
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
