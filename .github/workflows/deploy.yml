@@ -38,6 +38,7 @@ jobs:
           npm ci
 
       - name: Create public .env file
+        working-directory: ./frontend
         run: echo "PUBLIC_API_BASE_URL=${{ secrets.PUBLIC_API_BASE_URL }}" > .env
 
       - name: Build Project
