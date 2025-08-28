@@ -11,7 +11,7 @@ jobs:
       - name: Print Hello World
         run: echo "Hello World"
 
-  build-and-deploy:
+  build-and-deploy-to-frontend:
     name: Build and deploy frontend to S3 and Cloudfront
     runs-on: ubuntu-latest
     env:
@@ -55,3 +55,30 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id ${{ env.DIST_ID }} \
             --paths "/*"
+
+  build-and-deploy-to-backend:
+    name: Build and deploy backend to Elastic Beanstalk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: "sunny-portfolio-backend"
+          environment_name: "Sunny-portfolio-backend-env"
+          deployment_package: target/backend-0.0.1-SNAPSHOT.jar
+          version_label: 1.0
+          region: ap-southeast-2

@@ -80,7 +80,7 @@
 	};
 </script>
 
-<h1>This is my portfolio website this is an example testing with frontend .env variable</h1>
+<h1>This is my portfolio website this is an example testing backend</h1>
 
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
