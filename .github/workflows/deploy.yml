@@ -82,13 +82,17 @@ jobs:
           script: |
             rm -f /opt/sunny-portfolio/app.jar
 
+      - name: Find JAR file
+        id: find_jar
+        run: echo "jar_path=$(find backend/target -name '*.jar')" >> $GITHUB_OUTPUT
+
       - name: Copy JAR to EC2
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "backend/target/*.jar"
+          source: ${{ steps.find_jar.outputs.jar_path }}
           target: "/opt/sunny-portfolio/app.jar"
 
       - name: Restart application on EC2
