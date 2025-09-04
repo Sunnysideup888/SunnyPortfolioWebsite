@@ -97,6 +97,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ${{ steps.find_jar.outputs.jar_path }}
           target: "/opt/sunny-portfolio/"
+          strip_components: 2
 
       - name: Rename JAR on EC2
         uses: appleboy/ssh-action@master
