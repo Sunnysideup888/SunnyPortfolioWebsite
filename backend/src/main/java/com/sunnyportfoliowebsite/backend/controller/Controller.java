@@ -18,6 +18,11 @@ public class Controller {
         return "Backend works just fine and this is awesome and so cool help me";
     }
 
+    @GetMapping("/api/helloWorld")
+    public String helloWorld() {
+        return "Hello World from the backend";
+    }
+
     @GetMapping("/api/users")
     public List<User> getAllUsers() {
         return userRepository.findAll();

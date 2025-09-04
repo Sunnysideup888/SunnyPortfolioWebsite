@@ -78,10 +78,32 @@
 			console.log('Could not fetch all users there was an error ', err);
 		}
 	};
+
+    let helloWorld = $state('')
+    const handleHelloWorld = async () => {
+        try {
+            console.log("TRYING TO SEND HELLO WORLD REQUEST")
+            const res = await apiClient.get(`/api/helloWorld`)
+            helloWorld = res.data
+
+            console.log(`Hello world from ${helloWorld}`)
+        } catch (err) {
+            helloWorld = err.message
+        }
+    }
 </script>
 
 <h1>This is my portfolio website this is an example testing backend update permissions more permissions</h1>
 
+<button class="bg-amber-300 p-2 m-2 rounded-2xl hover:cursor-pointer active:bg-amber-500" on:click={handleHelloWorld}>
+    Hello world
+</button>
+
+{#if helloWorld}
+    <div>{helloWorld}</div>
+{/if}
+
+<br>
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
 	on:click={handleClick}
