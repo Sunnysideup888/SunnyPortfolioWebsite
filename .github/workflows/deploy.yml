@@ -96,7 +96,16 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ${{ steps.find_jar.outputs.jar_path }}
-          target: "/opt/sunny-portfolio/app.jar"
+          target: "/opt/sunny-portfolio/"
+
+      - name: Rename JAR on EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            mv /opt/sunny-portfolio/*.jar /opt/sunny-portfolio/app.jar
 
       - name: Restart application on EC2
         uses: appleboy/ssh-action@master
