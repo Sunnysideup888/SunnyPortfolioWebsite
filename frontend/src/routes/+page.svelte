@@ -1,6 +1,7 @@
 <script>
+	import Hero from '$lib/components/mainpage/Hero.svelte';
 </script>
 
-<div class="about">
-	<h1>Main page</h1>
+<div>
+	<Hero />
 </div>

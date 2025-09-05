@@ -26,7 +26,7 @@
 		<NavigationMenu.List class="group flex list-none items-center justify-center p-1">
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
-					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 					href="/"
 				>
 					<span class="hidden sm:inline"> Home </span>
@@ -35,7 +35,7 @@
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
-					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 					href="/portfolio"
 				>
 					<span class="hidden sm:inline"> Portfolio </span>
@@ -44,7 +44,7 @@
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
-					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 					href="/gallery"
 				>
 					<span class="hidden sm:inline"> Gallery </span>
@@ -53,7 +53,7 @@
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
-					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 					href="/contact"
 				>
 					<span class="hidden sm:inline"> Contact </span>
@@ -62,7 +62,7 @@
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
-					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-medium transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
+					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 					href="/about"
 				>
 					<span class="hidden sm:inline"> About </span>
@@ -86,7 +86,7 @@
 	<!-- This is when the screen gets small! -->
 	<DropdownMenu.Root bind:open={isMobileMenuOpen}>
 		<DropdownMenu.Trigger
-			class="text-foreground shadow-btn hover:bg-muted mx-8 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f4ee] text-sm font-medium select-none active:scale-[0.98] md:hidden"
+			class="text-foreground shadow-btn hover:bg-muted mx-8 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f4ee] text-sm select-none active:scale-[0.98] md:hidden"
 		>
 			{#if isMobileMenuOpen}
 				<X class="text-foreground h-6 w-6" />
@@ -106,7 +106,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm font-medium ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
 									>
 										<House class="text-foreground-alt mr-2 size-5" />
 										Home
@@ -115,7 +115,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/portfolio"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm font-medium ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
 									>
 										<Scroll class="text-foreground-alt mr-2 size-5" />
 										Portfolio
@@ -124,7 +124,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/gallery"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm font-medium ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
 									>
 										<Image class="text-foreground-alt mr-2 size-5" />
 										Gallery
@@ -133,7 +133,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/contact"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm font-medium ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
 									>
 										<PaperPlaneTilt class="text-foreground-alt mr-2 size-5" />
 										Contact
@@ -142,7 +142,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/about"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm font-medium ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
 									>
 										<User class="text-foreground-alt mr-2 size-5" />
 										About
