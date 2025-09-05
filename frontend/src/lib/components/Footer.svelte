@@ -5,16 +5,15 @@
 <nav
 	class="relative z-50 flex w-full items-center justify-center border-t border-[#ececed] bg-[#f4f3ec] py-2"
 >
-	<div class="flex flex-col items-center justify-center gap-2 p-4 md:gap-3">
-		<NavigationMenu.Root class="block px-10">
+	<div class="flex flex-col items-center justify-center gap-2 md:gap-3">
+		<NavigationMenu.Root class="block">
 			<NavigationMenu.List class="group flex list-none items-center justify-center p-1">
 				<NavigationMenu.Item>
 					<NavigationMenu.Link
 						class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[450] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 						href="/"
 					>
-						<span class="hidden sm:inline"> Home </span>
-						<span class="inline sm:hidden"> Home </span>
+						<span class="text-xs xs:text-base"> Home </span>
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 				<NavigationMenu.Item>
@@ -22,8 +21,7 @@
 						class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[450] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 						href="/portfolio"
 					>
-						<span class="hidden sm:inline"> Portfolio </span>
-						<span class="inline sm:hidden"> Portfolio </span>
+						<span class="text-xs xs:text-base"> Portfolio </span>
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 				<NavigationMenu.Item>
@@ -31,8 +29,7 @@
 						class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[450] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 						href="/gallery"
 					>
-						<span class="hidden sm:inline"> Gallery </span>
-						<span class="inline sm:hidden"> Gallery </span>
+						<span class="text-xs xs:text-base"> Gallery </span>
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 				<NavigationMenu.Item>
@@ -40,8 +37,7 @@
 						class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[450] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 						href="/contact"
 					>
-						<span class="hidden sm:inline"> Contact </span>
-						<span class="inline sm:hidden"> Contact </span>
+						<span class="text-xs xs:text-base"> Contact </span>
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 				<NavigationMenu.Item>
@@ -49,8 +45,7 @@
 						class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini dark:hover:bg-muted dark:data-[state=open]:bg-muted group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[450] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
 						href="/about"
 					>
-						<span class="hidden sm:inline"> About </span>
-						<span class="inline sm:hidden"> About </span>
+						<span class="text-xs xs:text-base"> About </span>
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 
@@ -67,9 +62,9 @@
 			</div>
 		</NavigationMenu.Root>
 
-		<p>© Sunny Chen 2025</p>
+		<p class="text-xs xs:text-base">© Sunny Chen 2025</p>
 
-		<p class="p-2 text-xs">
+		<p class="p-2 text-[10px] xs:text-xs">
 			Made using SvelteKit and SpringBoot. Check out the repo <a
 				href="https://github.com/Sunnysideup888/SunnyPortfolioWebsite"
 				target="_blank"
