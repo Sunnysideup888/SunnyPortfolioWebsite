@@ -20,7 +20,9 @@
 	let interests = $state('');
 	let statusMessage = $state('');
 
-	const handleAddUser = async () => {
+	const handleAddUser = async (event) => {
+		// We don't want the webpage to refresh!
+		event.preventDefault();
 		console.log(`Trying to add a new user with ${name} ${dob} ${interests}`);
 
 		const newUser = {
@@ -46,7 +48,8 @@
 	};
 
 	let deleteId = $state('');
-	const handleDeleteUser = async () => {
+	const handleDeleteUser = async (event) => {
+		event.preventDefault();
 		try {
 			await apiClient.delete(`/api/users/${deleteId}`);
 
@@ -99,7 +102,7 @@
 
 <button
 	class="m-2 rounded-2xl bg-amber-300 p-2 hover:cursor-pointer active:bg-amber-500"
-	on:click={handleHelloWorld}
+	onclick={handleHelloWorld}
 >
 	Hello world
 </button>
@@ -111,7 +114,7 @@
 <br />
 <button
 	class="m-4 rounded-2xl bg-green-200 p-4 hover:cursor-pointer active:bg-green-500"
-	on:click={handleClick}
+	onclick={handleClick}
 >
 	<h1>Hello World</h1>
 </button>
@@ -122,7 +125,7 @@
 
 <h1 class="bg-blue-200 text-2xl">Add new user</h1>
 
-<form on:submit|preventDefault={handleAddUser} class="flex max-w-md flex-col gap-4">
+<form onsubmit={handleAddUser} class="flex max-w-md flex-col gap-4">
 	<div>
 		<label for="name" class="block font-medium">Name:</label>
 		<input id="name" type="text" bind:value={name} class="w-full rounded-md border p-2" required />
@@ -151,7 +154,7 @@
 
 <h1 class="mt-4 bg-blue-200 text-2xl">Delete User</h1>
 
-<form on:submit|preventDefault={handleDeleteUser} class="flex max-w-md flex-col gap-4">
+<form onsubmit={handleDeleteUser} class="flex max-w-md flex-col gap-4">
 	<div>
 		<label for="name" class="block font-medium">Delete user:</label>
 		<input
@@ -167,7 +170,7 @@
 	</button>
 </form>
 
-<button on:click={handleListUsers} class="mt-4 rounded-3xl bg-gray-300 p-4">
+<button onclick={handleListUsers} class="mt-4 rounded-3xl bg-gray-300 p-4">
 	Fetch all users
 </button>
 

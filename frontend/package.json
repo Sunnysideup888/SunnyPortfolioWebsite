@@ -45,6 +45,7 @@
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
+		"phosphor-svelte": "^3.0.1",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
@@ -58,6 +59,8 @@
 		"svelte"
 	],
 	"dependencies": {
-		"axios": "^1.11.0"
+		"axios": "^1.11.0",
+		"bits-ui": "^2.9.6",
+		"svelte-sonner": "^1.0.5"
 	}
 }
