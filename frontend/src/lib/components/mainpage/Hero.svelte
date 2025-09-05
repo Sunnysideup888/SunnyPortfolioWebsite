@@ -40,15 +40,15 @@
 					<img src="/shapes/yellow_cross.svg" alt="Yellow Cross" />
 				</div>
 
-                <div class="flex flex-col items-center text-center">
-                    <h1 class="p-3.5 text-5xl font-[600] md:text-6xl lg:text-7xl">Hello, I'm Sunny!</h1>
-                    <div class="w-[450px]">
-                        <p class="lg:-translate-x-5">
-                            I'm studying Computer Science at UNSW. I love learning something new each day, and
-                            making things a reality!
-                        </p>
-                    </div>
-                </div>
+				<div class="flex flex-col items-center text-center">
+					<h1 class="p-3.5 text-5xl font-[600] md:text-6xl lg:text-7xl">Hello, I'm Sunny!</h1>
+					<div class="w-[450px]">
+						<p class="lg:-translate-x-5">
+							I'm studying Computer Science at UNSW. I love learning something new each day, and
+							making things a reality!
+						</p>
+					</div>
+				</div>
 			</div>
 			<!-- Front page image -->
 			<div class="flex-1" in:fly={{ y: 20, duration: 600, delay: 100 }}>

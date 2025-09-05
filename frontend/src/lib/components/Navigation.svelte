@@ -86,12 +86,12 @@
 	<!-- This is when the screen gets small! -->
 	<DropdownMenu.Root bind:open={isMobileMenuOpen}>
 		<DropdownMenu.Trigger
-			class="text-foreground shadow-btn hover:bg-muted mx-8 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f4ee] text-sm select-none active:scale-[0.98] md:hidden"
+			class="text-foreground shadow-btn hover:bg-muted mx-8 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f4ee] text-sm select-none focus-visible:outline-none active:scale-[0.98] md:hidden"
 		>
 			{#if isMobileMenuOpen}
-				<X class="text-foreground h-6 w-6" />
+				<X class="text-foreground h-6 w-6 hover:cursor-pointer" />
 			{:else}
-				<List class="text-foreground h-6 w-6" />
+				<List class="text-foreground h-6 w-6 hover:cursor-pointer" />
 			{/if}
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Portal>
@@ -101,12 +101,12 @@
 						<div {...wrapperProps} transition:fade={{ duration: 150 }}>
 							<div
 								{...props}
-								class="{props.class} shadow-popover z-100 w-[229px] rounded-xl bg-[#f5f4ee] px-1.5 py-1.5 outline-none"
+								class="{props.class} menu-content shadow-popover z-100 w-[229px] rounded-xl bg-[#f5f4ee] px-1.5 py-1.5 outline-none focus:outline-none"
 							>
 								<DropdownMenu.Item asChild>
 									<a
 										href="/"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<House class="text-foreground-alt mr-2 size-5" />
 										Home
@@ -115,7 +115,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/portfolio"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<Scroll class="text-foreground-alt mr-2 size-5" />
 										Portfolio
@@ -124,7 +124,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/gallery"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<Image class="text-foreground-alt mr-2 size-5" />
 										Gallery
@@ -133,7 +133,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/contact"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<PaperPlaneTilt class="text-foreground-alt mr-2 size-5" />
 										Contact
@@ -142,7 +142,7 @@
 								<DropdownMenu.Item asChild>
 									<a
 										href="/about"
-										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] focus-visible:outline-none"
+										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<User class="text-foreground-alt mr-2 size-5" />
 										About
@@ -156,3 +156,10 @@
 		</DropdownMenu.Portal>
 	</DropdownMenu.Root>
 </nav>
+
+<style>
+	.menu-content :global([data-highlighted]) {
+		outline: none;
+		box-shadow: none;
+	}
+</style>
