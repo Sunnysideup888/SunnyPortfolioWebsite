@@ -14,6 +14,7 @@
 <Grid>
 	{#if isMounted}
 		<div class="flex flex-col items-center gap-10 p-10 lg:flex-row lg:gap-25">
+			<!-- Div box for the text-->
 			<div
 				class="flex-1.1 relative flex flex-col items-center justify-center gap-1 p-2"
 				in:fly={{ y: 20, duration: 600 }}
@@ -39,14 +40,17 @@
 					<img src="/shapes/yellow_cross.svg" alt="Yellow Cross" />
 				</div>
 
-				<h1 class="p-4 text-5xl font-[600] md:text-6xl lg:text-7xl">Hello, I'm Sunny!</h1>
-				<div class="w-[450px]">
-					<p class="font-light">
-						I'm studying Computer Science at UNSW. I love learning something new each day, and
-						making things a reality!
-					</p>
-				</div>
+                <div class="flex flex-col items-center text-center">
+                    <h1 class="p-3.5 text-5xl font-[600] md:text-6xl lg:text-7xl">Hello, I'm Sunny!</h1>
+                    <div class="w-[450px]">
+                        <p class="lg:-translate-x-5">
+                            I'm studying Computer Science at UNSW. I love learning something new each day, and
+                            making things a reality!
+                        </p>
+                    </div>
+                </div>
 			</div>
+			<!-- Front page image -->
 			<div class="flex-1" in:fly={{ y: 20, duration: 600, delay: 100 }}>
 				<div class="h-96 w-96 overflow-hidden rounded-2xl border-10 border-white">
 					<img

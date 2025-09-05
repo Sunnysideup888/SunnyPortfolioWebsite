@@ -19,7 +19,7 @@
 
 <nav class="relative z-50 flex w-full items-center justify-between bg-[#f4f3ec] py-2">
 	<a href="/" class="px-2 md:px-8">
-		<img src="/sunnybanner.png" alt="Sunny Chen portfolio website banner" class="h-15" />
+		<img src="/sunny_banner.png" alt="Sunny Chen portfolio website banner" class="h-15" />
 	</a>
 
 	<NavigationMenu.Root class="hidden px-10 md:block">
