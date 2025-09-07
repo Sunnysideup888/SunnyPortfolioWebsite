@@ -44,7 +44,7 @@
 					<h1 class="py-3.5 text-[40px] font-[600] xs:text-5xl md:text-6xl lg:text-7xl">
 						Hello, I'm Sunny!
 					</h1>
-                    <!-- Set the max width to be 450px so that it doesn't overflow past the edge of the screen-->
+					<!-- Set the max width to be 450px so that it doesn't overflow past the edge of the screen-->
 					<div class="max-w-[450px] text-[13px] xs:text-base">
 						<p class="lg:-translate-x-5">
 							I'm studying Computer Science at UNSW. I love learning something new each day, and
