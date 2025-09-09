@@ -16,7 +16,7 @@
 		class="flex w-full flex-col items-center justify-center bg-[#aacbce] p-4"
 		in:fade={{ duration: 500 }}
 	>
-		<div class="relative flex flex-col items-center justify-center gap-3 px-10 py-8">
+		<div class="relative flex flex-col items-center justify-center gap-3 px-10 py-8 text-center">
 			<h1 class="text-5xl font-[550] text-white" in:fly={{ y: 20, duration: 800 }}>
 				Academic Interests
 			</h1>
