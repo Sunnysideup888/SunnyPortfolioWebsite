@@ -20,7 +20,7 @@
 			class="absolute inset-0 h-full w-full object-cover"
 		/>
 		<div
-			class="absolute top-1/2 left-1/2 z-10 w-100 -translate-x-1/2 -translate-y-1/2 sm:left-auto sm:translate-x-0 md:right-[6%] lg:right-[15%]"
+			class="absolute top-1/2 left-1/2 z-10 w-[90%] sm:w-100 -translate-x-1/2 -translate-y-1/2 sm:left-auto sm:translate-x-0 md:right-[6%] lg:right-[15%]"
 		>
 			<div
 				class="relative mx-auto flex flex-1 flex-col items-start border border-black/[0.2] bg-white p-4 opacity-90 transition-transform duration-300 ease-in-out hover:scale-101 dark:border-white/[0.2]"
