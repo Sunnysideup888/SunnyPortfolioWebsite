@@ -12,7 +12,7 @@
 	let message = $state('');
 
 	const formSubmit = () => {
-		console.log(`Email ${email} and name ${name} and message ${message}`);
+		// console.log(`Email ${email} and name ${name} and message ${message}`);
 		if (email === '' || name === '' || message === '') {
 			toast.error('Fill out all the fields');
 			return;
