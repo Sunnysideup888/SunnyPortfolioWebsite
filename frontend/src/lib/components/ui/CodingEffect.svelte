@@ -40,7 +40,7 @@
 			<div
 				class="relative flex h-44 w-44 items-center justify-center rounded-full text-4xl font-[550] text-white"
 			>
-				<span class="z-20 text-4xl text-white dark:text-white">{text}</span>
+				<span class="z-20 text-4xl text-white">{text}</span>
 			</div>
 		</div>
 	</div>
