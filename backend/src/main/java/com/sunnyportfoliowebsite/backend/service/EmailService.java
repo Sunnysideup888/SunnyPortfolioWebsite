@@ -47,9 +47,10 @@ public class EmailService {
 
         EmailHistoryRecord emailHistoryRecord = new EmailHistoryRecord(name, email, message, EmailDirection.TO_ME);
 
-        String subjectToSender = "Thank you for emailing - Sunny Chen";
+        String formattedSourceToSender = String.format("%s <%s>", "Sunny Chen", fromEmail);
+        String subjectToSender = "Thanks for your email - Sunny Chen";
         String htmlBodyToSender = String.format("""
-                <b>Thank you for emailing. The following is a receipt of your message</b>
+                <b>Thank you for getting in touch. The following is a receipt of your message.</b>
                 <br />
                 <br />
                 <b>Your Email Address:</b>
@@ -87,7 +88,7 @@ public class EmailService {
 
             SendEmailRequest requestToSender = SendEmailRequest
                     .builder()
-                    .source(fromEmail)
+                    .source(formattedSourceToSender)
                     .destination(Destination.builder().toAddresses(email).build())
                     .message(Message.builder()
                             .subject(Content.builder().data(subjectToSender).build())
@@ -97,8 +98,8 @@ public class EmailService {
 
             sesClient.sendEmail(request);
             sesClient.sendEmail(requestToSender);
-            emailRepository.<EmailHistoryRecord>save(emailHistoryRecord);
-            emailRepository.<EmailHistoryRecord>save(emailHistoryRecordToSender);
+            emailRepository.save(emailHistoryRecord);
+            emailRepository.save(emailHistoryRecordToSender);
         } catch (SesException err) {
             throw new RuntimeException("Error with sending email: " + err.getMessage());
         }
