@@ -1,6 +1,9 @@
 package com.sunnyportfoliowebsite.backend.service;
 
+import com.sunnyportfoliowebsite.backend.model.EmailDirection;
+import com.sunnyportfoliowebsite.backend.model.EmailHistoryRecord;
 import com.sunnyportfoliowebsite.backend.model.EmailRequest;
+import com.sunnyportfoliowebsite.backend.repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,13 +16,16 @@ public class EmailService {
     @Autowired
     private SesClient sesClient;
 
+    @Autowired
+    private EmailRepository emailRepository;
+
     @Value("${ses.from.email}")
     private String fromEmail;
 
     @Value("${ses.to.email}")
     private String toEmail;
 
-    public void sendEmail(EmailRequest emailRequest) {
+    public void sendEmails(EmailRequest emailRequest) {
         // Remove any HTML
         String name = HtmlUtils.htmlEscape(emailRequest.getName());
         String email = HtmlUtils.htmlEscape(emailRequest.getEmail());
@@ -39,8 +45,35 @@ public class EmailService {
                 This email is automatically generated. Please do not respond.
                 """, name, message.replaceAll("\n", "<br />"));
 
+        EmailHistoryRecord emailHistoryRecord = new EmailHistoryRecord(name, email, message, EmailDirection.TO_ME);
+
+        String subjectToSender = "Thank you for emailing - Sunny Chen";
+        String htmlBodyToSender = String.format("""
+                <b>Thank you for emailing. The following is a receipt of your message</b>
+                <br />
+                <br />
+                <b>Your Email Address:</b>
+                <br />
+                %s
+                <br />
+                <b>Your Name:</b>
+                <br />
+                %s
+                <br />
+                <b>Your Message</b>
+                <br />
+                %s
+                <br />
+                <br />
+                
+                <i>This email is automatically generated. Please do not respond.</i>
+                <br />
+                <i>If you are not the intended recipient, please delete this message.</i>
+                """, email, name, message.replaceAll("\n", "<br />"));
+
+        EmailHistoryRecord emailHistoryRecordToSender = new EmailHistoryRecord(name, email, message, EmailDirection.TO_SENDER);
+
         try {
-            System.out.println("This is the name " + name  + " This is the email " + email + " This is the message " + message);
             // This uses the builder pattern from COMP2511 haha - https://refactoring.guru/design-patterns/builder
             SendEmailRequest request = SendEmailRequest
                     .builder()
@@ -52,8 +85,20 @@ public class EmailService {
                             .build())
                     .build();
 
-            System.out.println("This is the SendEmailRequest " + request);
+            SendEmailRequest requestToSender = SendEmailRequest
+                    .builder()
+                    .source(fromEmail)
+                    .destination(Destination.builder().toAddresses(email).build())
+                    .message(Message.builder()
+                            .subject(Content.builder().data(subjectToSender).build())
+                            .body(Body.builder().html(Content.builder().data(htmlBodyToSender).build()).build())
+                            .build())
+                    .build();
+
             sesClient.sendEmail(request);
+            sesClient.sendEmail(requestToSender);
+            emailRepository.<EmailHistoryRecord>save(emailHistoryRecord);
+            emailRepository.<EmailHistoryRecord>save(emailHistoryRecordToSender);
         } catch (SesException err) {
             throw new RuntimeException("Error with sending email: " + err.getMessage());
         }

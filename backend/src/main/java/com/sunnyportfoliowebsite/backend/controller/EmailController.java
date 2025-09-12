@@ -18,12 +18,10 @@ public class EmailController {
 
     @PostMapping("/api/sendEmail")
     public ResponseEntity<?> sendEmail(@Valid @RequestBody EmailRequest emailRequest) {
-        System.out.println("THIS IS THE EMAIL REQUEST " + emailRequest);
         try {
-            emailService.sendEmail(emailRequest);
+            emailService.sendEmails(emailRequest);
             return ResponseEntity.ok(Map.of("message", "Email sent. Check your inbox for a copy as well."));
         } catch (Exception err) {
-            System.out.println("There was an error " + err.getMessage());
             return ResponseEntity.status(500).body(Map.of("Message", "Something went wrong."));
         }
     }
