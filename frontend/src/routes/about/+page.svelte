@@ -27,12 +27,10 @@
 			in:fly={{ y: 20, duration: 600, delay: 100 }}
 		>
 			<div class="flex flex-col items-center justify-center gap-4 lg:items-start">
-				<h1 class="text-[40px] font-[600] xs:text-4xl lg:text-5xl">
-					About me
-				</h1>
+				<h1 class="text-[40px] font-[600] xs:text-4xl lg:text-5xl">About me</h1>
 				<p>
 					Hi there! I'm Sunny, a current second year student at the University of New South Wales
-                    (UNSW) studying a Bachelor of Computer-Science (Co-op), planning to major in Artificial
+					(UNSW) studying a Bachelor of Computer-Science (Co-op), planning to major in Artificial
 					Intelligence and minor in Mathematics.
 					<br />
 					<br />
