@@ -1,16 +1,14 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import apiClient from '$lib/api.js';
 
-	// This is the json file of the first 12 images and their AWS S3 url's
-	let { data } = $props();
-	console.log(data.photos);
-
-	let photos = $state(data.photos);
-	let currentPage = $state(1);
+	let photos = $state([]);
+	let currentPage = $state(0);
+	let totalPages = $state(1);
 	let isLoaded = $state(false);
 	let sentinel = $state(null);
+	let mounted = $state(false);
 
 	let screenWidth = $state(0);
 
@@ -32,18 +30,23 @@
 	});
 
 	async function loadMorePhotos() {
-		if (isLoaded || currentPage >= data.totalPages) return;
+		if (isLoaded || currentPage >= totalPages) return;
 
 		isLoaded = true;
-		const res = apiClient.get(`/api/photos?page=${currentPage}&size=12`);
+		const res = await apiClient.get(`/api/photos?page=${currentPage}&size=12`);
 		const images = (await res).data;
 
 		photos = [...photos, ...images.content];
+		totalPages = images.totalPages;
 		currentPage++;
 		isLoaded = false;
 	}
 
-	onMount(() => {
+	onMount(async () => {
+		mounted = true;
+		await tick();
+		loadMorePhotos();
+
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				loadMorePhotos();
@@ -54,15 +57,20 @@
 		const handleResize = () => (screenWidth = window.innerWidth);
 		window.addEventListener('resize', handleResize);
 
-		if (sentinel) {
-			observer.observe(sentinel);
-		}
+		const cleanupEffect = $effect.root(() => {
+			$effect(() => {
+				if (sentinel) {
+					observer.observe(sentinel);
+				}
+			});
+		});
 
 		return () => {
 			window.removeEventListener('resize', handleResize);
 			if (sentinel) {
 				observer.unobserve(sentinel);
 			}
+			cleanupEffect();
 		};
 	});
 </script>
@@ -87,31 +95,33 @@
 	</div>
 </div>
 
-<div class="flex w-[100%] flex-col items-center justify-center p-4">
-	<div class="flex gap-4 px-4 lg:w-4/5">
-		{#each columns as photosInColumn, colIndex}
-			<div class="flex flex-1 flex-col gap-4">
-				{#each photosInColumn as photo, i}
-					<div
-						class="w-full"
-						in:fly={{
-							y: 20,
-							duration: 400,
-							delay: (i * numColumns + colIndex) * 80
-						}}
-					>
-						<img src={photo.s3Url} alt={photo.altText} class="h-auto w-full rounded-lg" />
-					</div>
-				{/each}
-			</div>
-		{/each}
-	</div>
-
-	{#if currentPage < data.totalPages}
-		<div bind:this={sentinel} class="flex h-20 w-full items-center justify-center">
-			{#if isLoaded}
-				<p class>Loading more photos</p>
-			{/if}
+{#if mounted}
+	<div class="flex w-[100%] flex-col items-center justify-center p-4">
+		<div class="flex gap-4 px-4 lg:w-4/5">
+			{#each columns as photosInColumn, colIndex (colIndex)}
+				<div class="flex flex-1 flex-col gap-4">
+					{#each photosInColumn as photo (photo.displayOrder)}
+						<div
+							class="w-full"
+							in:fly={{
+								y: 20,
+								duration: 400,
+								delay: (photo.displayOrder * numColumns + colIndex) * 5
+							}}
+						>
+							<img src={photo.s3Url} alt={photo.altText} class="h-auto w-full rounded-lg" />
+						</div>
+					{/each}
+				</div>
+			{/each}
 		</div>
-	{/if}
-</div>
+
+		{#if currentPage < totalPages}
+			<div bind:this={sentinel} class="flex h-20 w-full items-center justify-center">
+				{#if isLoaded}
+					<!--					<p class>Loading photos :)</p>-->
+				{/if}
+			</div>
+		{/if}
+	</div>
+{/if}
