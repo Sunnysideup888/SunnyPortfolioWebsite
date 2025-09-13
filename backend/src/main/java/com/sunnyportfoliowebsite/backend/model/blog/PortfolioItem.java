@@ -15,6 +15,8 @@ public class PortfolioItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private int orderAppears;
+
     @Column(nullable = false)
     private String title;
 
@@ -24,11 +26,10 @@ public class PortfolioItem {
     @Column(nullable = false, unique = true)
     private String slug;
 
-    @Column(name = "publication_date",nullable = false)
+    @Column(name = "publication_date", nullable = false)
     private LocalDate publicationDate;
 
-    @Lob
-    @Column(name = "content_markdown", nullable = false)
+    @Column(name = "content_markdown", nullable = false, columnDefinition = "TEXT")
     private String contentMarkdown;
 
     @Enumerated(EnumType.STRING)
@@ -42,4 +43,8 @@ public class PortfolioItem {
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
     private Set<Tag> tags = new HashSet<>();
+
+    // For full text search
+    @Column(name = "content_tsv", insertable = false, updatable = false, columnDefinition = "tsvector")
+    private String contentTsv;
 }

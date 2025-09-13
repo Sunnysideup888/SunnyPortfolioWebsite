@@ -10,7 +10,10 @@ public class TagService {
     private static final Map<String, String> PREDEFINED_TAG_COLOURS = Map.of(
             "Project", TagColor.RED.hexCode,
             "Blog", TagColor.BLUE.hexCode,
-            "Random", TagColor.YELLOW.hexCode
+            "Random", TagColor.YELLOW.hexCode,
+            "Computing", TagColor.RED.hexCode,
+            "Mathematics", TagColor.BLUE.hexCode,
+            "Geography", TagColor.YELLOW.hexCode
     );
 
     public String getColourOfTag(String tagName) {
