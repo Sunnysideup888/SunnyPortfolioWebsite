@@ -1,0 +1,11 @@
+### GET request to example server
+GET http://localhost:8080/api/test
+###
+
+### Test full text search
+http://localhost:8080/api/search?query=alice
+###
+
+### Test searching by different criteria
+http://localhost:8080/api/filter?type=BLOG&tags=Blog
+###
