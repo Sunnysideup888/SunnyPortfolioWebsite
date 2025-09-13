@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { Intersect } from 'phosphor-svelte';
 	import apiClient from '$lib/api.js';
 
 	// This is the json file of the first 12 images and their AWS S3 url's
@@ -13,22 +12,26 @@
 	let isLoaded = $state(false);
 	let sentinel = $state(null);
 
-    let screenWidth = $state(0)
+	let screenWidth = $state(0);
 
-    let count = $state(0);
-    let doubled = $derived.by(() => {
-        return count * 2
-    });
+	let numColumns = $derived.by(() => {
+		if (screenWidth < 768) {
+			return 2;
+		} else if (screenWidth < 1024) {
+			return 3;
+		}
+		return 4;
+	});
 
-    let columns = $derived.by(() => {
-        const cols = [[], [], [], []];
-        photos.forEach((photo, i) => {
-            cols[i % 4].push(photo);
-        });
-        return cols;
-    });
+	let columns = $derived.by(() => {
+		const cols = Array.from({ length: numColumns }, () => []);
+		photos.forEach((photo, i) => {
+			cols[i % numColumns].push(photo);
+		});
+		return cols;
+	});
 
-    async function loadMorePhotos() {
+	async function loadMorePhotos() {
 		if (isLoaded || currentPage >= data.totalPages) return;
 
 		isLoaded = true;
@@ -38,7 +41,6 @@
 		photos = [...photos, ...images.content];
 		currentPage++;
 		isLoaded = false;
-		console.log('Hi');
 	}
 
 	onMount(() => {
@@ -48,11 +50,16 @@
 			}
 		});
 
+		screenWidth = window.innerWidth;
+		const handleResize = () => (screenWidth = window.innerWidth);
+		window.addEventListener('resize', handleResize);
+
 		if (sentinel) {
 			observer.observe(sentinel);
 		}
 
 		return () => {
+			window.removeEventListener('resize', handleResize);
 			if (sentinel) {
 				observer.unobserve(sentinel);
 			}
@@ -80,37 +87,31 @@
 	</div>
 </div>
 
+<div class="flex w-[100%] flex-col items-center justify-center p-4">
+	<div class="flex gap-4 px-4 lg:w-4/5">
+		{#each columns as photosInColumn, colIndex}
+			<div class="flex flex-1 flex-col gap-4">
+				{#each photosInColumn as photo, i}
+					<div
+						class="w-full"
+						in:fly={{
+							y: 20,
+							duration: 400,
+							delay: (i * numColumns + colIndex) * 80
+						}}
+					>
+						<img src={photo.s3Url} alt={photo.altText} class="h-auto w-full rounded-lg" />
+					</div>
+				{/each}
+			</div>
+		{/each}
+	</div>
 
-<button onclick={() => count++} class="bg-yellow-300">
-    {doubled}
-</button>
-
-<p>{count} doubled is {doubled}</p>
-
-<div class="flex w-[100%] flex-col items-center justify-center">
+	{#if currentPage < data.totalPages}
+		<div bind:this={sentinel} class="flex h-20 w-full items-center justify-center">
+			{#if isLoaded}
+				<p class>Loading more photos</p>
+			{/if}
+		</div>
+	{/if}
 </div>
-
-
-<div class="flex gap-4 px-4">
-    {#each columns as photosInColumn, colIndex}
-        <div class="flex w-1/4 flex-col gap-4">
-            {#each photosInColumn as photo, i}
-                <div
-                        class="w-full"
-                        in:fly={{ y: 20, duration: 500, delay: (photos.length - photosInColumn.length + i) * 30 }}
-                >
-                    <img src={photo.s3Url} alt={photo.altText} class="h-auto w-full rounded-lg" />
-                </div>
-            {/each}
-        </div>
-    {/each}
-</div>
-
-
-{#if currentPage < data.totalPages}
-    <div bind:this={sentinel} class="flex h-20 w-full items-center justify-center">
-        {#if isLoaded}
-            <p class>Loading more photos</p>
-        {/if}
-    </div>
-{/if}

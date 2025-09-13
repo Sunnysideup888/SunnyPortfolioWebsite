@@ -9,9 +9,10 @@ const config = {
 			fallback: 'index.html'
 		})
 	},
-    compilerOptions: {
-        runes: true
-    }
+	compilerOptions: {
+		// Just to force me to use Svelte 5
+		runes: true
+	}
 };
 
 export default config;
