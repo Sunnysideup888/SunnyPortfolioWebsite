@@ -11,7 +11,7 @@
 
 {#if isVisible}
 	<div
-		class="relative flex h-[650px] w-full flex-col items-center justify-center overflow-hidden bg-red-50 p-4"
+		class="relative flex h-[650px] w-full flex-col items-center justify-center overflow-hidden p-4"
 		in:fly={{ y: 20, duration: 800 }}
 	>
 		<img

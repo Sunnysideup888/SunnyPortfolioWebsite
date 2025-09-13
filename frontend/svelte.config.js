@@ -8,6 +8,10 @@ const config = {
 			assets: 'build',
 			fallback: 'index.html'
 		})
+	},
+	compilerOptions: {
+		// Just to force me to use Svelte 5
+		runes: true
 	}
 };
 
