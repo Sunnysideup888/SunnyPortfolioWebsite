@@ -37,7 +37,7 @@
 		"@sveltejs/adapter-static": "^3.0.9",
 		"@sveltejs/kit": "^2.22.0",
 		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"@sveltejs/vite-plugin-svelte": "^6.2.0",
 		"@tailwindcss/forms": "^0.5.9",
 		"@tailwindcss/typography": "^0.5.15",
 		"@tailwindcss/vite": "^4.0.0",
@@ -50,7 +50,7 @@
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"publint": "^0.3.2",
-		"svelte": "^5.0.0",
+		"svelte": "^5.38.10",
 		"tailwindcss": "^4.0.0",
 		"typescript": "^5.3.2",
 		"vite": "^7.0.4"
@@ -61,6 +61,7 @@
 	"dependencies": {
 		"axios": "^1.11.0",
 		"bits-ui": "^2.9.6",
+		"flowbite-svelte": "^1.13.8",
 		"svelte-sonner": "^1.0.5"
 	}
 }

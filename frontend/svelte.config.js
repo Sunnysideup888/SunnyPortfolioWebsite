@@ -8,7 +8,10 @@ const config = {
 			assets: 'build',
 			fallback: 'index.html'
 		})
-	}
+	},
+    compilerOptions: {
+        runes: true
+    }
 };
 
 export default config;
