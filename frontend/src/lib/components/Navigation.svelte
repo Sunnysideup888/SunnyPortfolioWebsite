@@ -54,10 +54,10 @@
 			<NavigationMenu.Item>
 				<NavigationMenu.Link
 					class="hover:text-accent-foreground focus:bg-muted focus:text-accent-foreground data-[state=open]:shadow-mini group text-l inline-flex h-8 w-max items-center justify-center rounded-[7px] bg-transparent px-4 py-2 font-[430] transition-colors hover:bg-white focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-white"
-					href="/contact"
+					href="/blog"
 				>
-					<span class="hidden sm:inline"> Contact </span>
-					<span class="inline sm:hidden"> Contact </span>
+					<span class="hidden sm:inline"> Blog </span>
+					<span class="inline sm:hidden"> Blog </span>
 				</NavigationMenu.Link>
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
@@ -132,11 +132,11 @@
 								</DropdownMenu.Item>
 								<DropdownMenu.Item asChild>
 									<a
-										href="/contact"
+										href="/blog"
 										class="rounded-button data-highlighted:bg-muted flex h-10 items-center rounded-2xl py-3 pr-1.5 pl-3 text-sm ring-0! ring-transparent! transition-colors duration-200 select-none hover:bg-[#eeead1] hover:outline-none focus-visible:outline-none"
 									>
 										<PaperPlaneTilt class="text-foreground-alt mr-2 size-5" />
-										Contact
+										Blog
 									</a>
 								</DropdownMenu.Item>
 								<DropdownMenu.Item asChild>

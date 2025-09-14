@@ -49,7 +49,7 @@
 			</h2>
 			<a
 				class="mt-4 rounded-full border border-black/[0.2] px-2 py-0.5 text-sm font-light text-black hover:cursor-pointer"
-				href="/about"
+				href="/portfolio?tags=Computing"
 			>
 				Computing Projects
 			</a>
@@ -82,7 +82,7 @@
 			</h2>
 			<a
 				class="mt-4 rounded-full border border-black/[0.2] px-2 py-0.5 text-sm font-light text-black hover:cursor-pointer"
-				href="/about"
+				href="/portfolio?tags=Mathematics"
 			>
 				Mathematics Projects
 			</a>
@@ -115,7 +115,7 @@
 			</h2>
 			<a
 				class="mt-4 rounded-full border border-black/[0.2] px-2 py-0.5 text-sm font-light text-black hover:cursor-pointer"
-				href="/about"
+				href="/portfolio?tags=Geography"
 			>
 				Geography Projects
 			</a>

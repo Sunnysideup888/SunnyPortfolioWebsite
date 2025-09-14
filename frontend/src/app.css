@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
 @font-face {
 	font-family: 'Instrument Sans';
 	src: url('/fonts/Instrument_Sans/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
