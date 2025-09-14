@@ -2,6 +2,7 @@
 	import { Toaster } from 'svelte-sonner';
 	import { List, House, Scroll, Image, PaperPlaneTilt, User, X } from 'phosphor-svelte';
 	import { fade } from 'svelte/transition';
+	import SearchBar from '$lib/components/ui/SearchBar.svelte';
 	import { NavigationMenu, DropdownMenu } from 'bits-ui';
 
 	let isMobileMenuOpen = $state(false);
@@ -18,9 +19,12 @@
 <Toaster position="top-center" richColors closeButton />
 
 <nav class="relative z-50 flex w-full items-center justify-between bg-[#f4f3ec] py-2">
-	<a href="/" class="px-2 md:px-8">
-		<img src="/sunny_banner.png" alt="Sunny Chen portfolio website banner" class="h-15" />
-	</a>
+	<div class="flex flex-row items-center justify-center">
+		<a href="/" class="px-2 md:px-8">
+			<img src="/sunny_banner.png" alt="Sunny Chen portfolio website banner" class="h-15" />
+		</a>
+		<SearchBar />
+	</div>
 
 	<NavigationMenu.Root class="hidden px-10 md:block">
 		<NavigationMenu.List class="group flex list-none items-center justify-center p-1">
