@@ -16,7 +16,12 @@
 		<h3 class="text-xl font-bold tracking-wide text-gray-800">
 			{item.title}
 		</h3>
-		<div class="mt-4 flex flex-wrap gap-2">
+		<div class="mt-1">
+			{new Date(item.publicationDate).toLocaleDateString('en-AU', {
+				year: 'numeric'
+			})}
+		</div>
+		<div class="mt-2 flex flex-wrap gap-2">
 			{#each item.tags as tag (tag.id)}
 				<span
 					class="rounded-full px-3 py-1 text-xs font-semibold text-white"

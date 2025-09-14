@@ -20,6 +20,9 @@ public class PortfolioItem {
     @Column(nullable = false)
     private String title;
 
+    @Column(name = "caption")
+    private String caption;
+
     @Column(name = "title_image_url")
     private String titleImageUrl;
 

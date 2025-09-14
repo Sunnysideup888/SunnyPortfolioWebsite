@@ -1,7 +1,7 @@
 <script lang="js">
 	import PortfolioCard from '$lib/components/ui/PortfolioCard.svelte';
 	import { crossfade } from 'svelte/transition';
-	import { cubicInOut, cubicOut } from 'svelte/easing';
+	import { cubicInOut } from 'svelte/easing';
 	import { Combobox } from 'bits-ui';
 	import { CaretUpDown } from 'phosphor-svelte';
 	import { Check } from 'phosphor-svelte';
@@ -11,6 +11,7 @@
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { fly } from 'svelte/transition';
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
 
 	let { data } = $props();
 	let displayIndex = $state(null);
@@ -57,7 +58,7 @@
 	$effect(() => {
 		if (!browser) return;
 
-		const params = new URLSearchParams(window.location.search);
+		const params = new SvelteURLSearchParams(window.location.search);
 		if (selectedTags.length > 0) {
 			params.set('tags', selectedTags.join(','));
 		} else {

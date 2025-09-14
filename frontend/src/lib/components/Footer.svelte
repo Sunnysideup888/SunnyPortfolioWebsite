@@ -64,8 +64,10 @@
 
 		<p class="text-xs xs:text-base">© Sunny Chen 2025</p>
 
-		<p class="p-2 text-[10px] xs:text-xs">
-			Made from scratch using SvelteKit and Spring Boot. Check out the repo <a
+		<p class="p-2 text-center text-[10px] xs:text-xs">
+			Made from scratch using SvelteKit, Spring Boot, AWS, PostgreSQL, Nginx.<br /> Check out the
+			repo
+			<a
 				href="https://github.com/Sunnysideup888/SunnyPortfolioWebsite"
 				target="_blank"
 				class="hover:underline">here</a
