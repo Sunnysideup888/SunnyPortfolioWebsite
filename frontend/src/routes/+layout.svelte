@@ -12,6 +12,9 @@
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">
+	<div class="flex h-5 w-full items-center justify-center bg-red-200">
+		<i class="text-sm">This website is still under production.</i>
+	</div>
 	<Navigation />
 	<main class="flex-grow">
 		{@render children()}

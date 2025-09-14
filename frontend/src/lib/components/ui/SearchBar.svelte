@@ -13,7 +13,6 @@
 	async function handleInput(event) {
 		searchValue = event.target.value;
 		const query = searchValue;
-		console.log(`SEARCHING: "${query}"`);
 
 		if (!query) {
 			searchResults = [];
@@ -22,11 +21,8 @@
 
 		try {
 			const res = await apiClient.get(`/api/search?query=${query}`);
-			// const data = res.json();
-			console.log('YAYAYAY IT WOKRS: ', res.data);
 			searchResults = res.data;
 		} catch (err) {
-			console.log('ERROR: ', err);
 			searchResults = [];
 		}
 	}
@@ -43,7 +39,7 @@
 
 <Dialog.Root bind:open>
 	<Dialog.Trigger
-		class="hidden h-9 w-60 items-center justify-between rounded-lg bg-white px-3 text-sm text-gray-500 hover:bg-gray-100 lg:flex"
+		class="hidden h-9 items-center justify-between rounded-lg bg-white px-3 text-sm text-gray-500 hover:bg-gray-100 lg:flex lg:w-60"
 		aria-label="Search"
 	>
 		<div class="flex items-center gap-2">
@@ -60,7 +56,7 @@
 	<Dialog.Portal>
 		<Dialog.Overlay class="fixed inset-0 z-50 bg-black/60" />
 		<Dialog.Content
-			class="fixed top-3/10 left-1/2 z-50 w-full max-w-xl -translate-x-1/2 -translate-y-1/2 outline-none"
+			class="fixed top-3/10 left-1/2 z-50 w-80 max-w-xl -translate-x-1/2 -translate-y-1/2 outline-none xs:w-100 md:w-200 lg:w-300"
 		>
 			<Command.Root
 				shouldFilter={false}
