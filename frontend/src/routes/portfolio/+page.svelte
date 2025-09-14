@@ -1,7 +1,7 @@
 <script lang="js">
-    export const prerender = false;
+	export const prerender = false;
 
-    import PortfolioCard from '$lib/components/ui/PortfolioCard.svelte';
+	import PortfolioCard from '$lib/components/ui/PortfolioCard.svelte';
 	import { crossfade } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import { Combobox } from 'bits-ui';

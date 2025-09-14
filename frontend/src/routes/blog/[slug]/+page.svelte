@@ -1,7 +1,7 @@
 <script lang="js">
-    export const prerender = false;
+	export const prerender = false;
 
-    import { marked } from 'marked';
+	import { marked } from 'marked';
 	import DOMPurify from 'dompurify';
 	import { onMount } from 'svelte';
 	import katex from 'katex';
