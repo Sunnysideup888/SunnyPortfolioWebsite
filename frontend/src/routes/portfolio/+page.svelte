@@ -88,7 +88,7 @@
 			<div class="relative">
 				<Tag class="absolute start-3 top-1/2 size-5 -translate-y-1/2 text-gray-400" />
 				<Combobox.Input
-					class="flex h-11 w-full min-w-[280px] rounded-lg border border-gray-300 bg-white px-10 py-2 text-sm text-gray-900 ring-0 outline-none placeholder:text-gray-400 focus:border-gray-500 focus:ring-0 focus:outline-none dark:focus:border-gray-400"
+					class="flex h-11 w-full min-w-[280px] rounded-lg border border-gray-300 bg-white px-10 py-2 text-sm text-gray-900 ring-0 outline-none placeholder:text-gray-400 focus:border-gray-500 focus:ring-0 focus:outline-none"
 					placeholder="Filter by tags..."
 					oninput={(e) => (searchValue = e.currentTarget.value)}
 				/>

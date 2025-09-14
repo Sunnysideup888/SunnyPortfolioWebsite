@@ -71,8 +71,8 @@
 	<div class="mt-2 w-full max-w-4xl space-y-0">
 		{#each groupedItems as group (group.monthYear)}
 			<div class="mt-10 mb-6">
-				<h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-100">{group.monthYear}</h2>
-				<hr class="mt-2 border-gray-300 dark:border-gray-700" />
+				<h2 class="text-2xl font-semibold text-gray-800">{group.monthYear}</h2>
+				<hr class="mt-2 border-gray-300" />
 			</div>
 
 			{#each group.posts as item (item.id)}

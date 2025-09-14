@@ -24,7 +24,7 @@
 	});
 </script>
 
-<div class="bg-white py-16 dark:bg-black">
+<div class="bg-white py-16">
 	<article class="prose-md lg:prose-md mx-auto prose px-4">
 		<h1 class="mb-6">{data.item.title}</h1>
 		<p>
