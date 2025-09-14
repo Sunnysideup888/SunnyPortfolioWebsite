@@ -38,7 +38,7 @@ public class PortfolioController {
         return ResponseEntity.ok(items);
     }
 
-    @GetMapping("/api/slug")
+    @GetMapping("/api/slug/{slug}")
     public ResponseEntity<PortfolioItem> getItemBySlug(@PathVariable String slug) {
         return portfolioItemRepository
                 .findBySlug(slug)

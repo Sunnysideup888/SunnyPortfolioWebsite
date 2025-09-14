@@ -9,3 +9,7 @@ http://localhost:8080/api/search?query=alice
 ### Test searching by different criteria
 http://localhost:8080/api/filter?type=BLOG&tags=Blog
 ###
+
+### Search a project (portfolio or blog) based on the slug
+http://localhost:8080/api/slug/prefects
+###

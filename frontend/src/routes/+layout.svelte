@@ -10,8 +10,10 @@
 	<meta name="description" content="Welcome to my portfolio page! Made by Sunny Chen" />
 </svelte:head>
 
-<div>
+<div class="flex min-h-screen flex-col">
 	<Navigation />
-	{@render children()}
+	<main class="flex-grow">
+		{@render children()}
+	</main>
 	<Footer />
 </div>
