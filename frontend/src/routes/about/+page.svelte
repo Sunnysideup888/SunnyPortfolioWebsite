@@ -67,7 +67,7 @@
 									<b>Achievements:</b>
 									<ul class="list-outside list-disc px-5 text-sm">
 										<li>Dean's List 2024 & HD WAM</li>
-										<li>UNSW Co-op Scholar (3x Internships & $21,800 p.a.)</li>
+										<li>UNSW Co-op Scholar (3x Internships)</li>
 										<li>UNSW Scientia Scholarship</li>
 									</ul>
 
@@ -82,33 +82,34 @@
 										<li>UNSW CSESoc Marketing Subcommittee (2024)</li>
 									</ul>
 
-									<br />
-									<b>Hackathons:</b>
-									<ul class="list-outside list-disc px-5 text-sm">
-										<li>
-											Second place 'AI EdTech Student Hackathon' ($300 prize) by Build Club x UNSW
-											AI Society x Tutero
-										</li>
-									</ul>
+									<!--									<br />-->
+									<!--									<b>Hackathons:</b>-->
+									<!--									<ul class="list-outside list-disc px-5 text-sm">-->
+									<!--										<li>-->
+									<!--											Got second place in a team of 5 for the 'AI EdTech Student Hackathon' ($300 prize) by Build Club x UNSW-->
+									<!--											AI Society x Tutero-->
+									<!--										</li>-->
+									<!--									</ul>-->
 
 									<br />
-									<b>Software skills / languages / frameworks / libraries (summary):</b>
+									<b>Frameworks / languages / libraries / software skills (summary):</b>
 									<ul class="list-outside list-disc px-5 text-sm">
 										<li>
-											<b>Software skills:</b> Adobe Photoshop, Lightroom, Premiere Pro, After Effects,
-											QGIS, ArcGIS, DaVinci Resolve, Blender, Microsoft SharePoint, Vim
+											<b>Frameworks / web services:</b> Spring Boot, Laravel, Amazon Web Services (EC2,
+											CloudFront, S3, Route 53, etc.), Nginx, SvelteKit, CI / CD (GitHub actions, etc.),
+											Docker
 										</li>
 										<li>
 											<b>Languages:</b> C, Java, C++, PHP, React, Svelte, JavaScript, Assembly, Python,
 											SQL (PostGreSQL), NoSQL (MongoDB)
 										</li>
 										<li>
-											<b>Frameworks:</b> Spring Boot, Laravel, Amazon Web Services (EC2, CloudFront,
-											S3, Route 53, etc.), Nginx, SvelteKit, CI / CD (GitHub actions, etc.), Docker
-										</li>
-										<li>
 											<b>Libraries:</b> TensorFlow, PyTorch, SciKit Learn, etc. (Mostly those used in
 											AI / ML / Data Analysis)
+										</li>
+										<li>
+											<b>Software skills:</b> Adobe Photoshop, Lightroom, Premiere Pro, After Effects,
+											QGIS, ArcGIS, DaVinci Resolve, Blender, Microsoft SharePoint, Vim
 										</li>
 										<i class="text-sm">Note: This is not an exhaustive list</i>
 									</ul>

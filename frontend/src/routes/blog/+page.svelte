@@ -50,8 +50,6 @@
 			.reverse();
 	});
 
-	console.log('GROUPED ITEMS', groupedItems);
-
 	function handleMouseEnter(id) {
 		clearTimeout(leaveTimer);
 		displayId = id;

@@ -3,7 +3,7 @@
 </script>
 
 <nav
-	class="relative z-50 flex w-full items-center justify-center border-t border-[#ececed] bg-[#f4f3ec] py-2"
+	class="relative z-50 flex w-full items-center justify-center border-t border-[#ececed] bg-[#f4f3ec] py-4 sm:py-8"
 >
 	<div class="flex flex-col items-center justify-center gap-2 md:gap-3">
 		<NavigationMenu.Root class="block">
@@ -65,8 +65,7 @@
 		<p class="text-xs xs:text-base">© Sunny Chen 2025</p>
 
 		<p class="p-2 text-center text-[10px] xs:text-xs">
-			Made from scratch using SvelteKit, Spring Boot, AWS, PostgreSQL, Nginx.<br /> Check out the
-			repo
+			Made using SvelteKit, Spring Boot, AWS, PostgreSQL, Nginx, etc.<br /> Check out the repo
 			<a
 				href="https://github.com/Sunnysideup888/SunnyPortfolioWebsite"
 				target="_blank"

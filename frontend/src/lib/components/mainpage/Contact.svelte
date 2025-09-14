@@ -73,7 +73,7 @@
 					id="message"
 					placeholder="Message"
 					rows="3"
-					class="border-input flex w-full rounded-md border border-[#e5e4e5] px-3 py-2 text-sm"
+					class="border-input flex h-24 w-full resize-none rounded-md border border-[#e5e4e5] px-3 py-2 text-sm"
 					bind:value={message}
 				>
 				</textarea>
