@@ -1,7 +1,7 @@
 <script lang="js">
-    export const prerender = false;
+	export const prerender = false;
 
-    import { crossfade } from 'svelte/transition';
+	import { crossfade } from 'svelte/transition';
 	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 	import BlogCard from '$lib/components/ui/BlogCard.svelte';
