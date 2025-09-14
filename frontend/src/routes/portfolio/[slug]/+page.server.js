@@ -8,8 +8,6 @@ export async function load({ params }) {
 			item: response.data
 		};
 	} catch (err) {
-		console.log('HELP HELP HELP');
-		console.error('SSR FETCH FAILED:', err); // Log the full error to your terminal
 		throw error(404, 'This post could not be found.');
 	}
 }

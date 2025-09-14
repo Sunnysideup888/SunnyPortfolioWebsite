@@ -2,7 +2,9 @@ package com.sunnyportfoliowebsite.backend.controller;
 
 import com.sunnyportfoliowebsite.backend.model.blog.ItemType;
 import com.sunnyportfoliowebsite.backend.model.blog.PortfolioItem;
+import com.sunnyportfoliowebsite.backend.model.blog.Tag;
 import com.sunnyportfoliowebsite.backend.repository.PortfolioItemRepository;
+import com.sunnyportfoliowebsite.backend.repository.TagRepository;
 import com.sunnyportfoliowebsite.backend.service.PortfolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ public class PortfolioController {
     private PortfolioItemRepository portfolioItemRepository;
     @Autowired
     private CorsConfigurationSource corsConfigurationSource;
+    @Autowired
+    private TagRepository tagRepository;
 
     @GetMapping("/api/search")
     public ResponseEntity<List<PortfolioItem>> searchItems(@RequestParam(required = false) String query) {
@@ -44,5 +48,11 @@ public class PortfolioController {
                 .findBySlug(slug)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/api/tags")
+    public ResponseEntity<List<Tag>> getAllTags() {
+        List<Tag> tags =  tagRepository.findAll();
+        return ResponseEntity.ok(tags);
     }
 }

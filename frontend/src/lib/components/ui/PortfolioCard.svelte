@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="relative z-20 h-full overflow-hidden rounded-2xl bg-slate-50 p-4 shadow-lg transition-all duration-300 group-hover:border-slate-400 hover:scale-101"
+	class="relative z-20 h-full overflow-hidden rounded-2xl bg-slate-50 p-4 shadow-sm transition-all duration-300 group-hover:border-slate-400 hover:scale-101"
 	in:fly={{ y: 20, duration: 500 }}
 >
 	<img
