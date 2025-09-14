@@ -1,5 +1,7 @@
 <script lang="js">
-	import { marked } from 'marked';
+    export const prerender = false;
+
+    import { marked } from 'marked';
 	import DOMPurify from 'dompurify';
 	import { onMount } from 'svelte';
 	import katex from 'katex';
