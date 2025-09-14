@@ -29,7 +29,6 @@
 
 	const groupedItems = $derived.by(() => {
 		const groups = new SvelteMap();
-		// Ensure data.items exists before trying to group
 		if (!data.items) return [];
 
 		for (const item of data.items) {
@@ -43,7 +42,7 @@
 			}
 			groups.get(monthYear).push(item);
 		}
-		// Convert the Map into an array of objects [{ monthYear, posts }]
+		// Converts it into the form [{ monthYear, posts }]
 		return Array.from(groups.entries())
 			.map(([monthYear, posts]) => ({ monthYear, posts }))
 			.reverse();
@@ -78,7 +77,7 @@
 
 			{#each group.posts as item (item.id)}
 				<a
-					href={`/portfolio/${item.slug}`}
+					href={`/blog/${item.slug}`}
 					class="group relative block h-full w-full p-2"
 					onmouseenter={() => handleMouseEnter(item.id)}
 					onmouseleave={handleMouseLeave}

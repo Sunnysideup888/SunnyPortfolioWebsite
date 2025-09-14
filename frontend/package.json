@@ -64,7 +64,9 @@
 		"bits-ui": "^2.9.6",
 		"dompurify": "^3.2.6",
 		"flowbite-svelte": "^1.13.8",
+		"katex": "^0.16.22",
 		"marked": "^16.2.1",
+		"marked-katex-extension": "^5.1.5",
 		"svelte-sonner": "^1.0.5"
 	}
 }
