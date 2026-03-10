@@ -33,14 +33,13 @@
 
 				<h1 class="text-5xl font-[600] text-black">About Me</h1>
 				<h2 class="text-l mt-4 font-light text-black">
-					Currently I'm in Year 2 of a Computer Science degree at UNSW, and have enjoyed getting
-					involved in student life through societies such as CSESoc and Project Hope UNSW. I'm also
-					a Co-op scholar and received the Scientia scholarship, and was on the Dean's list for
-					2024. In my spare time, I love travelling and taking photos.
+					Currently I'm in Year 3 of a Computer Science degree at UNSW, and have enjoyed getting
+					involved in student life through societies such as CSESoc, CPMSoc and Project Hope UNSW. I've also been
+					fortunate to receive the Co-op and Scientia scholarship, and was on the Dean's list in 2024. In my spare time, I love taking photos and hiking.
 				</h2>
 				<h2 class="text-l mt-4 font-light text-black">
-					At the moment I'm interning at the Reserve Bank of Australia (RBA) Business Analysis team,
-					and also a lab demo tutor for Algorithm Design and Analysis (COMP3121)
+					At the moment, I'm on exchange at Hong Kong University (HKU) for Term 1. I've previously interned at the Reserve Bank of Australia (RBA),
+					and also a lab demo tutor for Algorithm Design and Analysis (COMP3121).
 				</h2>
 				<a
 					class="mt-4 rounded-full border border-black/[0.2] px-2 py-0.5 text-sm font-light text-black hover:cursor-pointer"

@@ -29,8 +29,8 @@
 			<div class="flex flex-col items-center justify-center gap-4 lg:items-start">
 				<h1 class="text-[40px] font-[600] xs:text-4xl lg:text-5xl">About me</h1>
 				<p>
-					Hi there! I'm Sunny, a current second year student at the University of New South Wales
-					(UNSW) studying a Bachelor of Computer-Science (Co-op), planning to major in Artificial
+					Hi, I'm Sunny, a current third year student at the University of New South Wales
+					(UNSW) studying a Bachelor of Computer Science, planning to major in Artificial
 					Intelligence and minor in Mathematics.
 					<br />
 					<br />
@@ -40,9 +40,9 @@
 
 					<br />
 					<br />
-					The lists below provide an overview, please see the portfolio tab for more detailed writeups
-					on what I achieved in each role. If you wish to have a copy of my resume - please fill the
-					contact page.
+					The lists below are an overview, please see the portfolio tab for more detailed writeups
+					on what I achieved in each role. For any questions, please email <a href="mailto:sunnychenaustralia@gmail.com" target="_blank" rel="noopener noreferrer"><u>sunnychenaustralia@gmail.com</u></a> or fill out
+					the contact page.
 				</p>
 			</div>
 
@@ -64,23 +64,31 @@
 						{#snippet child({ open })}
 							{#if open}
 								<div class="pb-[25px]" transition:slide={{ duration: 500 }}>
-									<b>Achievements:</b>
+									<b>Education:</b>
 									<ul class="list-outside list-disc px-5 text-sm">
 										<li>Dean's List 2024 & HD WAM</li>
 										<li>UNSW Co-op Scholar (3x Internships)</li>
 										<li>UNSW Scientia Scholarship</li>
+										<li>Notable results: 94 Higher Mathematics 1A & 1B, 97 Higher Complex Analysis, 99 Software Engineering Fundamentals, 94 Algorithm Design and Analysis, 97 Introduction to Atmosphere and Ocean Dynamics (2nd in course)</li>
 									</ul>
 
 									<br />
-									<b>Internships / work experience / societies:</b>
+									<b>Internships / work experience:</b>
 									<ul class="list-outside list-disc px-5 text-sm">
 										<li>
-											Buisness Analysis Intern @ Reserve Bank of Australia (RBA) (Sep - Jan 2025)
+											Finance Systems / Business Analysis / Procurement Intern @ Reserve Bank of Australia (RBA) (Sep - Jan 2025)
 										</li>
 										<li>Lab tutor for Algorithm Design and Analysis (COMP3121) (Sep - Dec 2025)</li>
+									</ul>
+
+									<br />
+									<b>Societies:</b>
+									<ul class="list-outside list-disc px-5 text-sm">
+										<li>CPMSoc Infrastructure Subcommittee (2026)</li>
 										<li>UNSW Project Hope Vice President (2025)</li>
 										<li>UNSW CSESoc Marketing Subcommittee (2024)</li>
 									</ul>
+
 
 									<!--									<br />-->
 									<!--									<b>Hackathons:</b>-->
@@ -92,25 +100,21 @@
 									<!--									</ul>-->
 
 									<br />
-									<b>Frameworks / languages / libraries / software skills (summary):</b>
+									<b>Frameworks / languages / libraries / software skills:</b>
 									<ul class="list-outside list-disc px-5 text-sm">
 										<li>
-											<b>Frameworks / web services:</b> Spring Boot, Laravel, Amazon Web Services (EC2,
-											CloudFront, S3, Route 53, etc.), Nginx, SvelteKit, CI / CD (GitHub actions, etc.),
-											Docker
+											<b>Frameworks / web services:</b> Spring Boot, Laravel, AWS, SvelteKit, React, CI/CD (GitHub actions), Docker, Django
 										</li>
 										<li>
-											<b>Languages:</b> C, Java, C++, PHP, React, Svelte, JavaScript, Assembly, Python,
-											SQL (PostGreSQL), NoSQL (MongoDB)
+											<b>Languages:</b> C, Java, C++, Python, JavaScript, PHP, Assembly, SQL (PostgreSQL), NoSQL (MongoDB)
 										</li>
 										<li>
-											<b>Libraries:</b> TensorFlow, PyTorch, SciKit Learn, etc. (Mostly those used in
-											AI / ML / Data Analysis)
+											<b>Libraries:</b> PyTorch, TensorFlow, Scikit-learn, Matplotlib
 										</li>
 										<li>
-											<b>Software skills:</b> Adobe Photoshop, Lightroom, Premiere Pro, After Effects,
-											QGIS, ArcGIS, DaVinci Resolve, Blender, Microsoft SharePoint, Vim
+											<b>Software skills:</b> Adobe Photoshop, Premiere Pro, After Effects, ArcGIS, Excel, Power BI, Vim, Jira, Miro, Microsoft Power Platform
 										</li>
+										<br/>
 										<i class="text-sm">Note: This is not an exhaustive list</i>
 									</ul>
 								</div>
