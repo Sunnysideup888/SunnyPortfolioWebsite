@@ -75,7 +75,7 @@
 <div class="container mx-auto px-4 py-10">
 	<div in:fly={{ y: 20, duration: 600, delay: 300 }}>
 		<h1 class="text-center text-5xl font-[600] text-black">Portfolio of work</h1>
-		<p class="mt-2 text-center text-lg text-gray-800">Some projects from the past few years</p>
+		<p class="mt-2 text-center text-lg text-gray-800">Projects and activities from the past few years</p>
 	</div>
 
 	<div class="z-30 mt-8 flex justify-center">

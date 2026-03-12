@@ -58,8 +58,8 @@
 				<div class="size-72 overflow-hidden rounded-2xl border-10 border-white xs:size-96">
 					<img
 						class="h-full w-full scale-100 object-cover object-[50%_60%]"
-						src="/profile_image_nyc.JPG"
-						alt="Hero banner me amongst trees"
+						src="/profile_image_nyc_small.png"
+						alt="Hero banner in NYC"
 					/>
 				</div>
 			</div>
